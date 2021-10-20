@@ -43,7 +43,7 @@ class AuthenticateUserService {
          }
       });
 
-      if(user!){
+      if(!user){
          await prismaClient.user.create({
             data: {
                github_id: id,

@@ -49,7 +49,7 @@ class AuthenticateUserService {
                github_id: id,
                login,
                avatar_url,
-               name
+               name,
             }
          });
       };

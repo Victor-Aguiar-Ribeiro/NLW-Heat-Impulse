@@ -46,6 +46,10 @@ export function AuthProvider ( props: AuthProvider ) {
     
     // Guardando o token no localStorage para manter o usuário autenticado por mais tempo
     localStorage.setItem ( '@dowhile: token', token );
+
+    // Prevenção de erros -> para quando o usuário faz login mesmo sem dar reload na página
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+
     setUser(user);
   }
 
